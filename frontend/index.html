@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #111827);
+      color: #e5e7eb;
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px;
+    }
+    h1 { margin: 0 0 16px; }
+    .panel {
+      background: #0b1220;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      max-width: 720px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .input-row { display: flex; gap: 8px; margin-bottom: 16px; }
+    input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+      background: #111827;
+      color: #e5e7eb;
+    }
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary { background: #22c55e; color: #0b1220; }
+    .btn-danger { background: #f97316; color: #0b1220; }
+    .btn-ghost { background: #1f2937; color: #e5e7eb; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .todo-item {
+      background: #0f172a;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .todo-left { display: flex; flex-direction: column; gap: 6px; }
+    .todo-title { font-weight: 600; }
+    .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pill-success { background: #22c55e20; color: #4ade80; border: 1px solid #22c55e40; }
+    .pill-warning { background: #f9731620; color: #fb923c; border: 1px solid #f9731640; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .done .todo-title { text-decoration: line-through; color: #9ca3af; }
+    .faded { opacity: 0.55; }
+    .muted { color: #9ca3af; text-align: center; }
+    .error { color: #fca5a5; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Todo App</h1>
+    <div class="input-row">
+      <input id="todo-input" placeholder="Nowe zadanie" />
+      <button id="add-btn" class="btn btn-primary">Dodaj</button>
+    </div>
+    <ul id="todo-list"></ul>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
